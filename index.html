@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Shashank Kumar Cinematographer</title>
-<meta name="description" content="Shashank Kumar Cinematographer. Visual storytelling, lighting design, emotionally driven cinema."/>
+<title>Shashank Kumar — Cinematographer</title>
+<meta name="description" content="Shashank Kumar — Cinematographer. Visual storytelling, lighting design, emotionally driven cinema."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Syne:wght@400;500;700;800&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet"/>
@@ -61,40 +61,13 @@ ul{list-style:none}
   background:var(--gold);
   pointer-events:none;
   transform:translate(-50%,-50%);
-  transition:width .3s var(--ease),height .3s var(--ease),background .3s,opacity .3s;
-  mix-blend-mode:difference;
+  transition:transform .08s linear,width .25s,height .25s,background .25s;
+  will-change:transform;
 }
-#cur2{
-  position:fixed;top:0;left:0;z-index:9998;
-  width:36px;height:36px;
-  border-radius:50%;
-  border:1px solid rgba(194,155,77,.5);
-  pointer-events:none;
-  transform:translate(-50%,-50%);
-  transition:width .4s var(--ease),height .4s var(--ease),border-color .3s;
-}
-body.hov #cur{width:48px;height:48px;background:rgba(240,236,227,.12)}
-body.hov #cur2{width:0;height:0;opacity:0}
+#cur2{display:none}
+body.hov #cur{width:40px;height:40px;background:rgba(194,155,77,.15);border:1px solid var(--gold)}
 
-/* ═══════════════════════════════
-   GRAIN
-═══════════════════════════════ */
-#grain{
-  position:fixed;inset:-300%;
-  width:700%;height:700%;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity:.028;
-  pointer-events:none;
-  z-index:9997;
-  animation:gs .35s steps(1) infinite;
-}
-@keyframes gs{
-  0%{transform:translate(0,0)}
-  25%{transform:translate(-4%,-5%)}
-  50%{transform:translate(5%,2%)}
-  75%{transform:translate(-2%,6%)}
-  100%{transform:translate(6%,-3%)}
-}
+/* grain removed for performance */
 
 /* ═══════════════════════════════
    NAV
@@ -215,6 +188,7 @@ body.hov #cur2{width:0;height:0;opacity:0}
   filter:grayscale(30%) brightness(.45);
   transform:scale(1.06);
   animation:hzoom 14s var(--easeOut) forwards;
+  will-change:transform;
 }
 @keyframes hzoom{to{transform:scale(1)}}
 .hero-bg::after{
@@ -633,7 +607,7 @@ body.hov #cur2{width:0;height:0;opacity:0}
 /* ═══════════════════════════════
    GALLERY
 ═══════════════════════════════ */
-.gallery{border-top:1px solid var(--border);overflow:hidden}
+.gallery{border-top:1px solid var(--border);overflow:hidden;content-visibility:auto}
 .gscroll{
   display:flex;gap:3px;
   overflow-x:auto;padding:3px;
@@ -969,10 +943,8 @@ footer{
 
 <!-- CURSOR -->
 <div id="cur"></div>
-<div id="cur2"></div>
 
-<!-- GRAIN -->
-<div id="grain"></div>
+
 
 <!-- NAV -->
 <header class="nav" id="nav">
@@ -1007,19 +979,19 @@ footer{
     -->
     <img
       src="h1.jpg"
-      alt="Cinematographer"
+      alt="Cinematography hero"
     />
   </div>
 
   <div class="hero-content">
-    <p class="hero-eyebrow">Cinematographer &mdash; Hyderabad, India</p>
+    <p class="hero-eyebrow"><span></span>Cinematographer &mdash; New Delhi, India</p>
     <h1 class="hero-title">
       <span class="t1">Shashank</span>
       <span class="t2"><em>Kumar</em></span>
     </h1>
     <p class="hero-tagline">
       Visual storytelling through light, lens, and intention.<br/>
-      Cinematographer focused on visual storytelling, combining technical expertise in camera systems, lens selection, and lighting design with a strong cinematic sensibility. Experienced in collaborating with agencies and creative teams to deliver high-quality, emotionally driven visuals, overseeing projects from concept to final frame with precision and artistic intent.
+      Every frame guided by lived experience and cinematic craft.
     </p>
     <div class="hero-btns">
       <a href="#work" class="btn-primary">
@@ -1028,7 +1000,7 @@ footer{
           <path d="M12 5v14M5 12l7 7 7-7"/>
         </svg>
       </a>
-      <a href="mailto:armansing5120@gmail.com" class="btn-ghost">Get in touch</a>
+      <a href="mailto:Armansing5120@gmail.com" class="btn-ghost">Get in touch</a>
     </div>
   </div>
 
@@ -1138,7 +1110,7 @@ footer{
       <div class="poster-card-img">
         <img src="poster-90s.jpg" alt="90s Middle Class Biopic poster" loading="lazy"/>
         <div class="poster-card-overlay">
-          <span class="poster-card-tag">Film &middot; 2025</span>
+          <span class="poster-card-tag">Feature Film &middot; 2025</span>
           <p class="poster-card-title">#90's Middle Class Biopic</p>
           <p class="poster-card-role">Associate Cinematographer</p>
         </div>
@@ -1156,7 +1128,7 @@ footer{
       <div class="poster-card-img">
         <img src="poster-shubham (2).png" alt="Shubham poster" loading="lazy"/>
         <div class="poster-card-overlay">
-          <span class="poster-card-tag">Film &middot; 2025</span>
+          <span class="poster-card-tag">Feature Film &middot; 2025</span>
           <p class="poster-card-title">Shubham</p>
           <p class="poster-card-role">Associate Cinematographer</p>
         </div>
@@ -1172,15 +1144,15 @@ footer{
 
     <div class="poster-card rv">
       <div class="poster-card-img">
-        <img src="poster-g2.png" alt="Goodachari 2 poster" loading="lazy"/>
+        <img src="poster-g2.png" alt="Goodacchari 2 poster" loading="lazy"/>
         <div class="poster-card-overlay">
-          <span class="poster-card-tag">Film &middot; 2026</span>
-          <p class="poster-card-title">Goodachari 2</p>
+          <span class="poster-card-tag">Feature Film &middot; 2026</span>
+          <p class="poster-card-title">Goodacchari 2</p>
           <p class="poster-card-role">Associate Cinematographer</p>
         </div>
       </div>
       <div class="poster-card-label">
-        <p class="poster-card-label-title">Goodachari 2</p>
+        <p class="poster-card-label-title">Goodacchari 2</p>
         <div class="poster-card-label-meta">
           <span class="poster-card-label-role">Assoc. Cinematographer</span>
           <span class="poster-card-label-year">2026</span>
@@ -1192,7 +1164,7 @@ footer{
       <div class="poster-card-img">
         <img src="poster-dacoit (3).png" alt="Dacoit poster" loading="lazy"/>
         <div class="poster-card-overlay">
-          <span class="poster-card-tag">Film &middot; 2026</span>
+          <span class="poster-card-tag">Feature Film &middot; 2026</span>
           <p class="poster-card-title">Dacoit</p>
           <p class="poster-card-role">Associate Cinematographer</p>
         </div>
@@ -1210,7 +1182,7 @@ footer{
       <div class="poster-card-img">
         <img src="poster-epic.png" alt="Epic poster" loading="lazy"/>
         <div class="poster-card-overlay">
-          <span class="poster-card-tag">Film &middot; 2026</span>
+          <span class="poster-card-tag">Feature Film &middot; 2026</span>
           <p class="poster-card-title">Epic</p>
           <p class="poster-card-role">Associate Cinematographer</p>
         </div>
@@ -1228,7 +1200,7 @@ footer{
       <div class="poster-card-img">
         <img src="poster-paradha.png" alt="Paradha poster" loading="lazy"/>
         <div class="poster-card-overlay">
-          <span class="poster-card-tag">Film &middot; 2025</span>
+          <span class="poster-card-tag">Feature Film &middot; 2025</span>
           <p class="poster-card-title">Paradha</p>
           <p class="poster-card-role">Associate Cinematographer</p>
         </div>
@@ -1262,7 +1234,7 @@ footer{
     <li class="prow rv">
       <div class="pnum">01</div>
       <div>
-        <h3 class="ptitle">Music Video Project 1</h3>
+        <h3 class="ptitle">Music Video Projects</h3>
         <p class="prole">Director of Photography &mdash; Multiple Production Companies</p>
         <p class="pdesc">
           Collaborated with multiple video production companies. Developed creative decks, shot breakdowns, and technical plans. Aligned visuals with brand identity through strategic lighting and camera angles. Contributed to post-production, providing insights for polished final edits. Delivered high-quality visuals that exceeded client expectations.
@@ -1270,12 +1242,41 @@ footer{
       </div>
       <div class="pmeta">
         <span class="ptag">Music Video</span>
-        <span class="pyear">2023</span>
+        <span class="pyear">2023&ndash;25</span>
       </div>
       <!-- REPLACE src with your own still from this project -->
       <div class="phimg">
-        <img src="https://youtu.be/YV7odvcqqvc?si=P8kP0nQck_ykHrHd" alt="Music Video" />
+        <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=500&q=80" alt="Music Video" />
       </div>
+    </li>
+
+    <li class="prow rv">
+      <div class="pnum">02</div>
+      <div>
+        <h3 class="ptitle">Brand Content &amp; Social Media</h3>
+        <p class="prole">Cinematographer &mdash; End-to-End Production</p>
+        <p class="pdesc">
+          Managed end-to-end video production, from logistics to final social media posts. Led visual treatment across Reels, photos, and YouTube videos for a cohesive narrative. Applied advanced editing techniques to enhance Reels and YouTube production quality.
+        </p>
+      </div>
+      <div class="pmeta">
+        <span class="ptag">Commercial</span>
+        <span class="pyear">2024&ndash;25</span>
+      </div>
+      <div class="phimg">
+        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500&q=80" alt="Brand Content" />
+      </div>
+    </li>
+
+    <li class="prow rv">
+      <div class="pnum">01</div>
+      <div>
+        <h3 class="ptitle">Music Video Project 1</h3>
+        <p class="prole">Director of Photography &mdash; Multiple Production Companies</p>
+        <p class="pdesc">Collaborated with multiple video production companies. Developed creative decks, shot breakdowns, and technical plans. Aligned visuals with brand identity through strategic lighting and camera angles.</p>
+      </div>
+      <div class="pmeta"><span class="ptag">Music Video</span><span class="pyear">2023</span></div>
+      <div class="phimg"><img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&q=80" alt="Music Video 1"/></div>
     </li>
 
     <li class="prow rv">
@@ -1283,38 +1284,41 @@ footer{
       <div>
         <h3 class="ptitle">Music Video Project 2</h3>
         <p class="prole">Cinematographer &mdash; End-to-End Production</p>
-        <p class="pdesc">
-          Managed end-to-end video production, from logistics to final social media posts. Led visual treatment across Reels, photos, and YouTube videos for a cohesive narrative. Applied advanced editing techniques to enhance Reels and YouTube production quality.
-        </p>
+        <p class="pdesc">Managed end-to-end video production. Led visual treatment across Reels, photos, and YouTube videos for a cohesive narrative.</p>
       </div>
-      <div class="pmeta">
-        <span class="ptag">Music Video</span>
-        <span class="pyear">2024</span>
-      </div>
-      <div class="phimg">
-        <img src="https://youtu.be/LqOqdYAwOPM?si=mdRmvRTJUHia6dIf" alt="Brand Content" />
-      </div>
+      <div class="pmeta"><span class="ptag">Music Video</span><span class="pyear">2024</span></div>
+      <div class="phimg"><img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400&q=80" alt="Music Video 2"/></div>
     </li>
-     
-     <li class="prow rv">
+
+    <li class="prow rv">
       <div class="pnum">03</div>
       <div>
         <h3 class="ptitle">Music Video Project 3</h3>
         <p class="prole">Cinematographer &mdash; End-to-End Production</p>
+        <p class="pdesc">Applied advanced editing techniques to enhance Reels and YouTube production quality. Delivered high-quality visuals that exceeded client expectations.</p>
+      </div>
+      <div class="pmeta"><span class="ptag">Music Video</span><span class="pyear">2024</span></div>
+      <div class="phimg"><img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&q=80" alt="Music Video 3"/></div>
+    </li>
+
+    <li class="prow rv">
+      <div class="pnum">04</div>
+      <div>
+        <h3 class="ptitle">Academic Film Projects</h3>
+        <p class="prole">Director of Photography &mdash; Mindscreen Film Institute</p>
         <p class="pdesc">
-          Managed end-to-end video production, from logistics to final social media posts. Led visual treatment across Reels, photos, and YouTube videos for a cohesive narrative. Applied advanced editing techniques to enhance Reels and YouTube production quality.
+          Multiple hands-on academic film projects during Diploma in Cinematography. Specialised in structured day and night lighting setups, advanced camera operations, and cinematographic storytelling. Graduated with distinction.
         </p>
       </div>
       <div class="pmeta">
-        <span class="ptag">Music Video</span>
-        <span class="pyear">2024</span>
+        <span class="ptag">Short Film</span>
+        <span class="pyear">2022&ndash;23</span>
       </div>
       <div class="phimg">
-        <img src="https://youtu.be/LqOqdYAwOPM?si=mdRmvRTJUHia6dIf" alt="Content" />
+        <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=500&q=80" alt="Academic Film" />
       </div>
     </li>
 
-   
   </ul>
 </section>
 
@@ -1464,12 +1468,12 @@ footer{
     <div class="scard rv">
       <div class="scard-num">03</div>
       <h3>Music Video Production</h3>
-      <p>Full-service music video cinematography creative decks, shot breakdowns, on-set execution, and post-production support for artists and labels.</p>
+      <p>Full-service music video cinematography — creative decks, shot breakdowns, on-set execution, and post-production support for artists and labels.</p>
     </div>
     <div class="scard rv">
       <div class="scard-num">04</div>
       <h3>Brand &amp; Social Content</h3>
-      <p>End-to-end video production for brands  Reels, YouTube, and long-form content with a cohesive visual identity and polished delivery.</p>
+      <p>End-to-end video production for brands — Reels, YouTube, and long-form content with a cohesive visual identity and polished delivery.</p>
     </div>
   </div>
 </section>
@@ -1553,7 +1557,7 @@ footer{
   </div>
   <div class="flinks">
     <a href="https://www.instagram.com/ig_shashanksinghh" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://www.imdb.com/find/?q=Shashank+Kumar+cinematographer" target="_blank" rel="noopener">IMDB</a>
+    <a href="https://www.imdb.com/name/nm13694200/?ref_=ext_shr" target="_blank" rel="noopener">IMDB</a>
     <a href="mailto:Armansing5120@gmail.com">Email</a>
   </div>
   <p class="fcopy">&copy; 2025 Shashank Kumar. All rights reserved.</p>
@@ -1561,19 +1565,14 @@ footer{
 
 <!-- ═══════ SCRIPT ═══════ -->
 <script>
-/* CURSOR */
-const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
-let mx=0,my=0,cx=0,cy=0,cx2=0,cy2=0;
+/* CURSOR — CSS transform only, no rAF loop */
+const cur=document.getElementById('cur');
 if(cur&&window.matchMedia('(pointer:fine)').matches){
-  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
-  (function tick(){
-    cx+=(mx-cx)*.14;cy+=(my-cy)*.14;
-    cx2+=(mx-cx2)*.07;cy2+=(my-cy2)*.07;
-    cur.style.left=cx+'px';cur.style.top=cy+'px';
-    cur2.style.left=cx2+'px';cur2.style.top=cy2+'px';
-    requestAnimationFrame(tick);
-  })();
-  document.querySelectorAll('a,button,.prow,.gi,.gi-t,.scard,.edu,.clink')
+  document.addEventListener('mousemove',e=>{
+    cur.style.left=e.clientX+'px';
+    cur.style.top=e.clientY+'px';
+  },{passive:true});
+  document.querySelectorAll('a,button,.poster-card,.prow,.gi,.gi-t,.scard,.edu,.clink')
     .forEach(el=>{
       el.addEventListener('mouseenter',()=>document.body.classList.add('hov'));
       el.addEventListener('mouseleave',()=>document.body.classList.remove('hov'));
