@@ -638,6 +638,29 @@ body.hov #cur{width:40px;height:40px;background:rgba(194,155,77,.15);border:1px 
   font-family:var(--head);font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;
   color:rgba(240,236,227,.15);
 }
+/* Fix gallery spacing issues */
+.gallery {
+  padding: 0 !important;
+  margin: 0 !important;
+  border-top: 1px solid var(--border);
+}
+
+.gscroll {
+  padding: 20px 60px !important;
+  margin: 0 !important;
+  gap: 8px !important;
+}
+
+.gscroll > div {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.ghint {
+  margin: 0 !important;
+  padding: 8px 0 20px 0 !important;
+  line-height: 1 !important;
+}
 
 /* ═══════════════════════════════
    ABOUT
@@ -1370,31 +1393,31 @@ footer{
 </section>
 
 <!-- ═══════ GALLERY ═══════ -->
-<section class="gallery rv">
-  <div class="gscroll" id="gscroll" style="display: flex; gap: 8px; overflow-x: auto; padding: 8px; scroll-snap-type: x mandatory;">
+<section class="gallery rv" style="padding: 0; margin: 0;">
+  <div class="gscroll" id="gscroll" style="display: flex; gap: 8px; overflow-x: auto; padding: 20px 60px; margin: 0; scroll-snap-type: x mandatory;">
     <div style="flex: 0 0 auto; width: min(360px, 70vw); height: min(270px, 52.5vw); scroll-snap-align: start;">
-      <img src="i1.jpeg" alt="Still 1" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block; background: #161616;"/>
+      <img src="i1.jpeg" alt="Still 1" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block; "/>
     </div>
     <div style="flex: 0 0 auto; width: min(400px, 75vw); height: min(225px, 42.187vw); scroll-snap-align: start;">
-      <img src="i2.jpeg" alt="Still 2" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block; background: #161616;"/>
+      <img src="i2.jpeg" alt="Still 2" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;"/>
     </div>
     <div style="flex: 0 0 auto; width: min(400px, 75vw); height: min(225px, 42.187vw); scroll-snap-align: start;">
-      <img src="i3.jpeg" alt="Still 3" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block; background: #161616;"/>
-    </div>
-    <div style="flex: 0 0 auto; width: min(360px, 70vw); height: min(270px, 52.5vw); scroll-snap-align: start;">
-      <img src="i4.jpeg" alt="Still 4" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block; background: #161616;"/>
-    </div>
-    <div style="flex: 0 0 auto; width: min(400px, 75vw); height: min(225px, 42.187vw); scroll-snap-align: start;">
-      <img src="i5.jpeg" alt="Still 5" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block; background: #161616;"/>
+      <img src="i3.jpeg" alt="Still 3" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block; "/>
     </div>
     <div style="flex: 0 0 auto; width: min(360px, 70vw); height: min(270px, 52.5vw); scroll-snap-align: start;">
-      <img src="i6.jpeg" alt="Still 6" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block; background: #161616;"/>
+      <img src="i4.jpeg" alt="Still 4" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block; "/>
     </div>
     <div style="flex: 0 0 auto; width: min(400px, 75vw); height: min(225px, 42.187vw); scroll-snap-align: start;">
-      <img src="i7.jpeg" alt="Still 7" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block; background: #161616;"/>
+      <img src="i5.jpeg" alt="Still 5" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block; "/>
+    </div>
+    <div style="flex: 0 0 auto; width: min(360px, 70vw); height: min(270px, 52.5vw); scroll-snap-align: start;">
+      <img src="i6.jpeg" alt="Still 6" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;"/>
+    </div>
+    <div style="flex: 0 0 auto; width: min(400px, 75vw); height: min(225px, 42.187vw); scroll-snap-align: start;">
+      <img src="i7.jpeg" alt="Still 7" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block; "/>
     </div>
   </div>
-  <p class="ghint" style="text-align: center; padding: 16px; font-size: 0.7rem; letter-spacing: 2px; color: rgba(240,236,227,0.3);">&larr; drag to explore &rarr;</p>
+  <p class="ghint" style="text-align: center; padding: 8px 0 20px; font-size: 0.6rem; letter-spacing: 2px; color: rgba(240,236,227,0.25);">&larr; drag to explore &rarr;</p>
 </section>
 
 <!-- ═══════ ABOUT ═══════ -->
